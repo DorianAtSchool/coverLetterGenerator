@@ -1,0 +1,225 @@
+/* Cover Letter Generator Styles */
+
+:root {
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --background-color: #f8fafc;
+    --card-background: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --success-color: #16a34a;
+    --error-color: #dc2626;
+    --input-focus: #3b82f6;
+  }
+  
+  /* Main Container */
+  .cover-letter-container {
+    min-height: 100vh;
+    background-color: var(--background-color);
+    padding: 2rem 1rem;
+  }
+  
+  /* Card Styling */
+  .generator-card {
+    background-color: var(--card-background);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: box-shadow 0.3s ease;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  
+  .generator-card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  }
+  
+  /* Section Headers */
+  .section-header {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+  }
+  
+  /* Form Elements */
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .input-label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-input,
+  .form-textarea,
+  .form-select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.875rem;
+    color: var(--text-primary);
+    background-color: var(--card-background);
+  }
+  
+  .form-input:focus,
+  .form-textarea:focus,
+  .form-select:focus {
+    outline: none;
+    border-color: var(--input-focus);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+  
+  .form-textarea {
+    min-height: 100px;
+    resize: vertical;
+  }
+  
+  /* File Upload Styling */
+  .file-upload {
+    border: 2px dashed var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .file-upload:hover {
+    border-color: var(--primary-color);
+    background-color: rgba(37, 99, 235, 0.05);
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: var(--primary-hover);
+  }
+  
+  .btn-secondary {
+    background-color: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+  }
+  
+  .btn-secondary:hover {
+    background-color: var(--background-color);
+  }
+  
+  .btn-success {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+  }
+  
+  .btn-success:hover {
+    filter: brightness(110%);
+  }
+  
+  /* Preview Section */
+  .preview-section {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .preview-content {
+    background-color: var(--background-color);
+    padding: 2rem;
+    border-radius: 0.5rem;
+    white-space: pre-wrap;
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+  }
+  
+  /* Error Message */
+  .error-message {
+    background-color: #fef2f2;
+    border: 1px solid #fee2e2;
+    color: var(--error-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Loading State */
+  .loading {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+  
+  /* Responsive Grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  @media (min-width: 768px) {
+    .grid-2 {
+      grid-template-columns: 1fr 1fr;
+    }
+    
+    .cover-letter-container {
+      padding: 2rem;
+    }
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  
+  /* Print Styles */
+  @media print {
+    .cover-letter-container {
+      padding: 0;
+      background: white;
+    }
+  
+    .generator-card {
+      box-shadow: none;
+    }
+  
+    .btn {
+      display: none;
+    }
+  
+    .preview-content {
+      padding: 0;
+      background: white;
+    }
+  }
